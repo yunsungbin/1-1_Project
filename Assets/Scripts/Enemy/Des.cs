@@ -2,19 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBase : MonoBehaviour
+public class Des : MonoBehaviour
 {
-    public float Maxhp;
-    public float hp;
+    private float ds = 0;
     // Start is called before the first frame update
     void Start()
     {
-        hp = Maxhp;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (ds > 1)
+        {
+            Destroy(gameObject);
+            ds = 0;
+        }
+        ds += Time.deltaTime;
     }
 }

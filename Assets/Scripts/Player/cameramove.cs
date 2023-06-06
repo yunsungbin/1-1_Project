@@ -2,22 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shoter : EnemyBase
+public class cameramove : MonoBehaviour
 {
-    public float colTime;
-    public float time;
+    public GameObject Player;
+
+    private Vector3 offset;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        offset = transform.position - Player.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(time > colTime)
-        {
-
-        }
+        transform.position = Player.transform.position + offset;
     }
 }
