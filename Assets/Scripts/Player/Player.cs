@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        dmp = EnemyBase.pdm;
         BulletShot();
     }
 
@@ -97,11 +98,22 @@ public class Player : MonoBehaviour
     {
         if (collision.collider.CompareTag("EBullet"))
         {
-            hp -= EnemyBase.pdm;
+            OnDamage(dmp);
         }
         if (collision.collider.CompareTag("block"))
         {
             transform.position += -vc * Speed * Time.deltaTime;
+        }
+    }
+
+    void OnDamage(float dm)
+    {
+        hp -= dm;
+
+        if (hp <= 0)
+        {
+            InGameManager.kMoster++;
+            Destroy(this.gameObject);
         }
     }
 }
