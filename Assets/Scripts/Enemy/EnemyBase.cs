@@ -11,10 +11,6 @@ public abstract class EnemyBase : MonoBehaviour
     public static float pdm = 0;
     public float dm;
 
-    public float speed = 5f;
-    public Transform target;
-
-    UnityEngine.AI.NavMeshAgent nav;
     private void Awake()
     {
         hp = Maxhp;
@@ -24,13 +20,13 @@ public abstract class EnemyBase : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        target = InGameManager.Instance.curPlayer.transform;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Player.deathMonster == true)
+        if(Player.deathMonster == true)
         {
             hp = 0;
             Player.deathMonster = false;

@@ -14,16 +14,14 @@ public class Shoter : EnemyBase
     // Start is called before the first frame update
     void Start()
     {
-        target = InGameManager.Instance.curPlayer.transform;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         dg = Player.dmp;
-        Vector3 dir = (target.position - transform.position);
-        transform.position += dir.normalized * speed * Time.deltaTime;
-        if (Time.time > colTime)
+        if(Time.time > colTime)
         {
             Instantiate(shot, new Vector3(transform.position.x -1, transform.position.y - 5, transform.position.z), Quaternion.Euler(0, 0, 0));
             colTime = timer + Time.time;
@@ -34,7 +32,7 @@ public class Shoter : EnemyBase
     {
         if (collision.collider.CompareTag("Player"))
         {
-            collision.collider.GetComponent<EnemyBase>()?.OnDamage(dg);
+            collision.collider.GetComponent<EnemyBase>()?.OnDamage(hp);
             InGameManager.kMoster++;
             Destroy(gameObject);
         }

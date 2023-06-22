@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - EBullet
   - block
+  - sea
   layers:
   - Default
   - TransparentFX

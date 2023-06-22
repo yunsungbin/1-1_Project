@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 15ede1f7806bc7c4398ad60d3f69dde7, type: 2}
 --- !u!1 &92659735 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 80d93f197b5ba974cbeb72ff401afbd0, type: 3}
@@ -175,7 +175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4be33cb2b3b7e7e4fa237fcf5fea859b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curPlayer: {fileID: 1392332735}
 --- !u!4 &257965457
 Transform:
   m_ObjectHideFlags: 0
@@ -521,9 +520,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Spawner:
-  - {fileID: 6575824300308028072, guid: 0654e4669dfc82a4597fbeac7b20ea67, type: 3}
+  - {fileID: 5375149241916758583, guid: 0654e4669dfc82a4597fbeac7b20ea67, type: 3}
   spawnTime: 10
-  sTime: 5
+  sTime: 2
   MaxSpawn: 10
 --- !u!1001 &672096522
 PrefabInstance:
