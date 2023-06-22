@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -29,12 +30,15 @@ public class Player : MonoBehaviour
     }
     void Start()
     {
-        
+        hp = MaxHp;
+        dmPlayer = dmp;
+        hpGauge.i = 10;
     }
 
     void Update()
     {
         BulletShot();
+        GMSkill();
     }
 
     private void FixedUpdate()
@@ -77,20 +81,21 @@ public class Player : MonoBehaviour
         }
     }
 
-    void Skill()
-    {
-        if (Input.GetKey(KeyCode.Q))
-        {
-
-        }
-    }
-
     void GMSkill()
     {
         if (Input.GetKey(KeyCode.F1))
         {
-            deathMonster = true;
+            SceneManager.LoadScene("InGame2");
         }
+        if (Input.GetKey(KeyCode.F2))
+        {
+            SceneManager.LoadScene("Title");
+        }
+    }
+
+    public void OnDamage(float dm)
+    {
+
     }
 
     private void OnCollisionEnter(Collision collision)

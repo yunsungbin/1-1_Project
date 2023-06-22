@@ -12,7 +12,33 @@ public class InGameManager : MonoBehaviour
 
     public static float kMoster;
 
-    private 
+    private static InGameManager instance = null;
+
+    public GameObject curPlayer;
+
+    public static InGameManager Instance
+    {
+        get
+        {
+            if (null == instance)
+            {
+                return null;
+            }
+            return instance;
+        }
+    }
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -32,4 +58,6 @@ public class InGameManager : MonoBehaviour
             SceneManager.LoadScene("InGame2");
         }
     }
+
+
 }
