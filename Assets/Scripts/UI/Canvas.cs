@@ -7,6 +7,9 @@ public class Canvas : MonoBehaviour
 {
     public hpGauge hp;
     public NpGauge np;
+
+    public Skill skill;
+    public aSkill askill;
     // Start is called before the first frame update
     void Start()
     {

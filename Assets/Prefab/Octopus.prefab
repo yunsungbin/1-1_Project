@@ -13,9 +13,7 @@ GameObject:
   - component: {fileID: 5879627097487916002}
   - component: {fileID: 5069140099164444337}
   - component: {fileID: 5069140099164444338}
-  - component: {fileID: 5069140099164444339}
   - component: {fileID: 5069140099164444340}
-  - component: {fileID: 7584753328663567694}
   m_Layer: 8
   m_Name: Octopus
   m_TagString: Enemy
@@ -117,25 +115,13 @@ MonoBehaviour:
   Maxhp: 50
   hp: 0
   dm: 5
+  speed: 5
+  target: {fileID: 0}
   colTime: 0
   timer: 4
-  shot: {fileID: 5142426877373831312, guid: 4c55b55a4327d6d4fb4e1335c3fe1202, type: 3}
+  shot: {fileID: 8815266803980280139, guid: 3a032656dc41b3047aa6a9470434efcc, type: 3}
   spawn: {fileID: 0}
   dg: 0
---- !u!114 &5069140099164444339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5375149241916758583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a2f9b78118cbaf449c5e9eae92beba5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  player: {fileID: 664635228560801772, guid: 1ede686ecfd5420459d8792ff84ccf10, type: 3}
 --- !u!54 &5069140099164444340
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -152,25 +138,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!195 &7584753328663567694
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5375149241916758583}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 3.862422
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 3.3311718
-  m_BaseOffset: 1.6655859
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4

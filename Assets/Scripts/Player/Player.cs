@@ -93,20 +93,48 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void HpRecover(float amount = 10f)
+    {
+        hp += amount;
+        hpGauge.i++;
+        OnDamage(0);
+        if (hp > MaxHp) hp = MaxHp;
+    }
+
     public void OnDamage(float dm)
     {
+        hp -= dm;
+        for (int j = 0; j < 10; j++)
+        {
+            hpGauge.g[j].SetActive(false);
+        }
+        for (int k = 0; k < hpGauge.i; k++)
+        {
+            hpGauge.g[k].SetActive(true);
+        }
 
+        if (hp <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("EBullet"))
         {
-            hp -= EnemyBase.pdm;
+            hpGauge.i--;
+            OnDamage(10);
         }
         if (collision.collider.CompareTag("block"))
         {
             transform.position += -vc * Speed * Time.deltaTime;
+        }
+        if (collision.collider.CompareTag("sea"))
+        {
+            transform.position = new Vector3(0, 3.12f, 0);
+            hpGauge.i--;
+            OnDamage(10);
         }
     }
 }
