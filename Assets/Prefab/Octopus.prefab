@@ -115,7 +115,7 @@ MonoBehaviour:
   Maxhp: 50
   hp: 0
   dm: 5
-  speed: 5
+  speed: 4
   target: {fileID: 0}
   colTime: 0
   timer: 4

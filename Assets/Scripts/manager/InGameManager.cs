@@ -80,7 +80,7 @@ public class InGameManager : MonoBehaviour
         
         if (Input.GetKey(KeyCode.Q) && healCurDelay >= healMaxDelay)
         {
-            if (player.hp == player.MaxHp)
+            if (player.hp >= player.MaxHp)
             {
                 StartCoroutine(NoHeal());
             }
