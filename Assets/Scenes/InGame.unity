@@ -330,6 +330,7 @@ MonoBehaviour:
   curPlayer: {fileID: 1392332735}
   healer: {fileID: 5498505155406601068, guid: 4cdcdd1b8b0db5249b921b9f7fbb1df5, type: 3}
   skillAttack: {fileID: 0}
+  player: {fileID: 1392332738}
   healMaxDelay: 10
   bombMaxDelay: 20
   t: {fileID: 1029618966}

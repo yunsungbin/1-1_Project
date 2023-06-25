@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
     public GameObject gm;
+    public GameObject exit;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,5 +34,24 @@ public class MenuManager : MonoBehaviour
     public void SetAciveFALSE()
     {
         gm.SetActive(false);
+    }
+
+    public void SetExit()
+    {
+        exit.SetActive(true);
+    }
+
+    public void SetExitFALSE()
+    {
+        exit.SetActive(false);
+    }
+
+    public void SetExitTrue()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit(); // 어플리케이션 종료
+#endif
     }
 }

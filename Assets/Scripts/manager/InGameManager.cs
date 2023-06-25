@@ -17,7 +17,7 @@ public class InGameManager : MonoBehaviour
     public GameObject curPlayer;
     public ParticleSystem healer;
     public GameObject skillAttack;
-    Player player;
+    public Player player;
 
     [Header("Skill")]
     public float healMaxDelay = 10f;
