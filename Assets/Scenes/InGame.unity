@@ -328,7 +328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curPlayer: {fileID: 1392332735}
-  healer: {fileID: 5498505155406601068, guid: 4cdcdd1b8b0db5249b921b9f7fbb1df5, type: 3}
+  healer: {fileID: 1896930076030486864, guid: c0991c1d6cf11c545895a623f8fa499d, type: 3}
   skillAttack: {fileID: 0}
   player: {fileID: 1392332738}
   healMaxDelay: 10

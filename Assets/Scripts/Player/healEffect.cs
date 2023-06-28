@@ -32,7 +32,6 @@ public class healEffect : MonoBehaviour
             timer += Time.deltaTime;
             yield return null;
         }
-        yield return new WaitForSeconds(1);
         Destroy(gameObject);
         StopCoroutine(healDestory(0));
     }
