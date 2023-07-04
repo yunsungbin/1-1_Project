@@ -11,6 +11,7 @@ public class Shoter : EnemyBase
     public Transform spawn;
 
     public float dg = 0;
+    public Animator Oct;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +38,14 @@ public class Shoter : EnemyBase
             hpGauge.i--;
             collision.collider.GetComponent<Player>()?.OnDamage(10);
             //InGameManager.kMoster++;
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("err"))
+        {
             Destroy(gameObject);
         }
     }

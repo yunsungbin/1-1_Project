@@ -27,6 +27,8 @@ public class InGameManager : MonoBehaviour
 
     public GameObject t;
 
+    public ParticleSystem star;
+
     public static InGameManager Instance
     {
         get
@@ -69,6 +71,7 @@ public class InGameManager : MonoBehaviour
             SceneManager.LoadScene("InGame2");
         }
         SkillSeting();
+        ERRORSKILL();
     }
 
     public void SkillSeting()
@@ -103,7 +106,21 @@ public class InGameManager : MonoBehaviour
         aSkill.Setskill(1 - bombCurDelay / bombMaxDelay);
     }
 
-    IEnumerator NoHeal()
+    public void ERRORSKILL()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            if (Input.GetKey(KeyCode.RightShift))
+            {
+                if (Input.GetKeyDown(KeyCode.P))
+                {
+                    Instantiate(star, new Vector3(player.transform.position.x, player.transform.position.y + 10, player.transform.position.z), Quaternion.identity);
+                }
+            }
+        }
+    }
+
+        IEnumerator NoHeal()
     {
         t.SetActive(true);
 

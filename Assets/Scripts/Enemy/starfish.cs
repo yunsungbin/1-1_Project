@@ -23,10 +23,7 @@ public class starfish : EnemyBase
         dg = Player.dmp;
         Vector3 dir = (target.position - transform.position);
         transform.position += dir.normalized * speed * Time.deltaTime;
-        if (Time.time > colTime)
-        {
-            colTime = timer + Time.time;
-        }
+        Attack();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -37,6 +34,15 @@ public class starfish : EnemyBase
             collision.collider.GetComponent<Player>()?.OnDamage(10);
             //InGameManager.kMoster++;
             Destroy(gameObject);
+        }
+    }
+
+    public void Attack()
+    {
+        if (Time.time > colTime)
+        {
+            
+            colTime = timer + Time.time;
         }
     }
 

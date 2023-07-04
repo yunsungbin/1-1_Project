@@ -19,7 +19,8 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 1
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'Hips' not found\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -27,7 +28,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -83,7 +84,42 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: "\uB0A8\uC790(Clone)"
+      parentName: 
+      position: {x: 7.593174, y: 1.2486751, z: -0.010939378}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Object003
+      parentName: "\uB0A8\uC790(Clone)"
+      position: {x: -0.00064178463, y: -0.018043956, z: 0.5370042}
+      rotation: {x: 0, y: 0, z: 1, w: 0.00000013315805}
+      scale: {x: 0.970265, y: 0.903292, z: 0.97633}
+    - name: Box003
+      parentName: "\uB0A8\uC790(Clone)"
+      position: {x: -0.0028381348, y: 0.007892117, z: 0.52243215}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.766095, y: 0.815049, z: 0.955179}
+    - name: Object007
+      parentName: "\uB0A8\uC790(Clone)"
+      position: {x: -0.00064178463, y: -0.0073589515, z: 0.5607937}
+      rotation: {x: 0, y: 0, z: 1, w: 0.00000013315805}
+      scale: {x: 0.696682, y: 0.798455, z: 0.852597}
+    - name: Cylinder009
+      parentName: "\uB0A8\uC790(Clone)"
+      position: {x: -0.001072998, y: 0.004983158, z: 0.8660568}
+      rotation: {x: -0.012792953, y: 0, z: -0, w: 0.99991816}
+      scale: {x: 0.579958, y: 0.655875, z: 0.359627}
+    - name: Box022
+      parentName: "\uB0A8\uC790(Clone)"
+      position: {x: -0, y: -0.00735898, z: 0.5607937}
+      rotation: {x: 0, y: 0, z: 1, w: -0.00000013315805}
+      scale: {x: 0.696682, y: 0.696682, z: 0.852597}
+    - name: Object002
+      parentName: "\uB0A8\uC790(Clone)"
+      position: {x: -0.12244903, y: 0.008593508, z: -0.45673552}
+      rotation: {x: 0, y: 0, z: 1, w: 0.00000013315805}
+      scale: {x: 0.790303, y: 0.856179, z: 0.919785}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -98,9 +134,9 @@ ModelImporter:
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0

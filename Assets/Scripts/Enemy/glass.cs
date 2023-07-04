@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class glass : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnCollisionEnter(Collision collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (collision.collider.CompareTag("Player"))
+        {
+            hpGauge.i--;
+            collision.collider.GetComponent<Player>()?.OnDamage(10);
+        }
     }
 }

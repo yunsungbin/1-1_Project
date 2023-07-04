@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     private Vector3 vc;
 
     public static bool deathMonster = false;
+    public Animator anim;
 
     private void Awake()
     {
@@ -33,6 +34,7 @@ public class Player : MonoBehaviour
         hp = MaxHp;
         dmPlayer = dmp;
         hpGauge.i = 10;
+        anim.GetComponent<Animator>();
     }
 
     void Update()
@@ -53,7 +55,21 @@ public class Player : MonoBehaviour
         {
             transform.position += dir * Speed * Time.deltaTime;
 
-            //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * rotateSpeed);
+            if(v >= 0)
+            {
+                anim.SetBool("Run", true);
+                anim.SetBool("Back", false);
+            }
+            if (v <= 0)
+            {
+                anim.SetBool("Back", true);
+                anim.SetBool("Run", false);
+            }
+        }
+        if(h==0 && v == 0)
+        {
+            anim.SetBool("Back", false);
+            anim.SetBool("Run", false);
         }
     }
 

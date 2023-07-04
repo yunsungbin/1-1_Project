@@ -9,6 +9,7 @@ TagManager:
   - EBullet
   - block
   - sea
+  - err
   layers:
   - Default
   - TransparentFX
