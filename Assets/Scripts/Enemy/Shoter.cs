@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shoter : EnemyBase
 {
-    public float colTime = 2;
+    public float colTime = 3;
     public float timer;
 
     public GameObject shot;
@@ -22,11 +22,11 @@ public class Shoter : EnemyBase
     void Update()
     {
         dg = Player.dmp;
-        Vector3 dir = (target.position - transform.position);
+        Vector3 dir = (new Vector3(target.position.x, target.position.y + 2, target.position.z) - transform.position);
         transform.position += dir.normalized * speed * Time.deltaTime;
         if (Time.time > colTime)
         {
-            Instantiate(shot, new Vector3(transform.position.x -1, transform.position.y - 5, transform.position.z), Quaternion.Euler(0, 0, 0));
+            Instantiate(shot, new Vector3(transform.position.x -1, transform.position.y, transform.position.z), Quaternion.Euler(90, 0, 0));
             colTime = timer + Time.time;
         }
     }
@@ -52,7 +52,7 @@ public class Shoter : EnemyBase
 
     protected override void DieDestroy()
     {
-        InGameManager.kMoster++;
+        //InGameManager.kMoster++;
         Destroy(gameObject);
     }
 }

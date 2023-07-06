@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8815266803980280148}
   - component: {fileID: 8815266803980280149}
   - component: {fileID: 8815266803980280138}
-  - component: {fileID: 8815266803980280151}
   - component: {fileID: -9033693275248259170}
   - component: {fileID: 2640815167054559720}
+  - component: {fileID: 307599160736265593}
   m_Layer: 0
   m_Name: octAttack
   m_TagString: EBullet
@@ -664,7 +664,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 4
+    type: 0
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -4815,20 +4815,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!136 &8815266803980280151
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8815266803980280139}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 1.5166826
-  m_Height: 4.875809
-  m_Direction: 1
-  m_Center: {x: 0, y: -1.9307811, z: -0.15822709}
 --- !u!54 &-9033693275248259170
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4857,5 +4843,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38f5a735c50397a44afdc94d6d2a6cf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  speed: 4
+  timer: 0
+  enemy: {fileID: 0}
+  speed: 3
+--- !u!136 &307599160736265593
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8815266803980280139}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 3.2237508
+  m_Height: 6.4724073
+  m_Direction: 1
+  m_Center: {x: 0.24321032, y: 0.055025816, z: -0.008488178}

@@ -44,7 +44,7 @@ public abstract class EnemyBase : MonoBehaviour
 
         if (hp <= 0)
         {
-            InGameManager.kMoster++;
+            //InGameManager.kMoster++;
             Destroy(this.gameObject);
         }
     }

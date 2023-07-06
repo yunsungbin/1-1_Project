@@ -10,7 +10,7 @@ public class InGameManager : MonoBehaviour
     public static bool None = false;
     public static bool nextGame = false;
 
-    public static float kMoster;
+    //public static float kMoster;
 
     private static InGameManager instance = null;
 
@@ -28,6 +28,10 @@ public class InGameManager : MonoBehaviour
     public GameObject t;
 
     public ParticleSystem star;
+
+    [Header("Timer")]
+    public GameObject timer;
+    public float time;
 
     public static InGameManager Instance
     {
@@ -61,15 +65,6 @@ public class InGameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(kMoster >= MonserSpawn.mSpawn * 2)
-        {
-            nextGame = true;
-        }
-        if(nextGame == true)
-        {
-            nextGame = false;
-            SceneManager.LoadScene("InGame2");
-        }
         SkillSeting();
         ERRORSKILL();
     }
@@ -120,7 +115,7 @@ public class InGameManager : MonoBehaviour
         }
     }
 
-        IEnumerator NoHeal()
+    IEnumerator NoHeal()
     {
         t.SetActive(true);
 

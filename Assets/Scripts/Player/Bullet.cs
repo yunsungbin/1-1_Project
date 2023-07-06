@@ -21,11 +21,11 @@ public class Bullet : MonoBehaviour
         ds += Time.deltaTime;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.collider.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy"))
         {
-            collision.collider.GetComponent<EnemyBase>()?.OnDamage(damage);
+            other.GetComponent<EnemyBase>()?.OnDamage(damage);
             Destroy(gameObject);
         }
     }

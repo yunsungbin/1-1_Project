@@ -22,7 +22,7 @@ public class orca : EnemyBase
     void Update()
     {
         dg = Player.dmp;
-        Vector3 dir = (target.position - transform.position);
+        Vector3 dir = (new Vector3(target.position.x, target.position.y + 2, target.position.z) - transform.position);
         transform.position += dir.normalized * speed * Time.deltaTime;
         if (Time.time > colTime)
         {
@@ -52,7 +52,7 @@ public class orca : EnemyBase
 
     protected override void DieDestroy()
     {
-        InGameManager.kMoster++;
+        //InGameManager.kMoster++;
         Destroy(gameObject);
     }
 }

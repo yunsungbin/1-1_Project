@@ -75,24 +75,25 @@ public class Player : MonoBehaviour
 
     void BulletShot()
     {
+        Vector3 playerposition = new Vector3(transform.position.x, transform.position.y + 2, transform.position.z);
         if (Input.GetKey(KeyCode.LeftArrow) && Time.time > nextFire)
         {
-            Instantiate(shot, transform.position, Quaternion.Euler(0, 0, 180));
+            Instantiate(shot, playerposition, Quaternion.Euler(0, 0, 180));
             nextFire = Time.time + fire;
         }
         if (Input.GetKey(KeyCode.RightArrow) && Time.time > nextFire)
         {
-            Instantiate(shot, transform.position, Quaternion.Euler(0, 0, 0));
+            Instantiate(shot, playerposition, Quaternion.Euler(0, 0, 0));
             nextFire = Time.time + fire;
         }
         if (Input.GetKey(KeyCode.UpArrow) && Time.time > nextFire)
         {
-            Instantiate(shot, transform.position, Quaternion.Euler(0, -90, 0));
+            Instantiate(shot, playerposition, Quaternion.Euler(0, -90, 0));
             nextFire = Time.time + fire;
         }
         if (Input.GetKey(KeyCode.DownArrow) && Time.time > nextFire)
         {
-            Instantiate(shot, transform.position, Quaternion.Euler(0, 90, 0));
+            Instantiate(shot, playerposition, Quaternion.Euler(0, 90, 0));
             nextFire = Time.time + fire;
         }
     }
@@ -137,11 +138,6 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.CompareTag("EBullet"))
-        {
-            hpGauge.i--;
-            OnDamage(10);
-        }
         if (collision.collider.CompareTag("block"))
         {
             transform.position += -vc * Speed * Time.deltaTime;
@@ -149,6 +145,15 @@ public class Player : MonoBehaviour
         if (collision.collider.CompareTag("sea"))
         {
             transform.position = new Vector3(0, 3.12f, 0);
+            hpGauge.i--;
+            OnDamage(10);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("EBullet"))
+        {
             hpGauge.i--;
             OnDamage(10);
         }
