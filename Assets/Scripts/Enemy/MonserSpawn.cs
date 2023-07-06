@@ -25,8 +25,8 @@ public class MonserSpawn : MonoBehaviour
         {
             if(Time.time > spawnTime)
             {
-                Instantiate(Spawner[Random.Range(0, 1)], new Vector3(Random.Range(Random.Range(-20, -15), Random.Range(15, 21)), 2f, Random.Range(Random.Range(-20, -15), Random.Range(15, 21))), Quaternion.Euler(-90, 0, 0));
-                Instantiate(Spawner[Random.Range(0, 1)], new Vector3(Random.Range(Random.Range(-20, -15), Random.Range(15, 21)), 2f, Random.Range(Random.Range(-20, -15), Random.Range(15, 21))), Quaternion.Euler(-90, 0, 0));
+                Instantiate(Spawner[Random.Range(0, 1)], new Vector3(Random.Range(Random.Range(-20, -15), Random.Range(15, 21)), 4f, Random.Range(Random.Range(-20, -15), Random.Range(15, 21))), Quaternion.Euler(-90, 0, 0));
+                Instantiate(Spawner[Random.Range(0, 1)], new Vector3(Random.Range(Random.Range(-20, -15), Random.Range(15, 21)), 4f, Random.Range(Random.Range(-20, -15), Random.Range(15, 21))), Quaternion.Euler(-90, 0, 0));
                 spawn++;
                 spawnTime = sTime + Time.time;
             }

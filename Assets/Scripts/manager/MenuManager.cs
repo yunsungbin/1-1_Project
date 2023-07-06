@@ -8,6 +8,7 @@ public class MenuManager : MonoBehaviour
 {
     public GameObject gm;
     public GameObject exit;
+    public GameObject create;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +45,16 @@ public class MenuManager : MonoBehaviour
     public void SetExitFALSE()
     {
         exit.SetActive(false);
+    }
+
+    public void SetCreater()
+    {
+        create.SetActive(true);
+    }
+
+    public void NonCreater()
+    {
+        create.SetActive(false);
     }
 
     public void SetExitTrue()

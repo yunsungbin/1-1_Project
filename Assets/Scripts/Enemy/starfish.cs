@@ -11,6 +11,7 @@ public class starfish : EnemyBase
     public Transform spawn;
 
     public float dg = 0;
+    public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
