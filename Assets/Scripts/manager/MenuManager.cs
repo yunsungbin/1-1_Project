@@ -24,7 +24,7 @@ public class MenuManager : MonoBehaviour
     public void StartGame()
     {
         InGameManager.StartGame = true;
-        SceneManager.LoadScene("Intro");
+        SceneManager.LoadScene("InGame");
     }
 
     public void SetAciveTRUE()

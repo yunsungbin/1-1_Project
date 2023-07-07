@@ -123,7 +123,7 @@ MonoBehaviour:
   shot: {fileID: 8815266803980280139, guid: 3a032656dc41b3047aa6a9470434efcc, type: 3}
   spawn: {fileID: 0}
   dg: 0
-  Oct: {fileID: 0}
+  Oct: {fileID: -8258462487587663884}
 --- !u!54 &5069140099164444340
 Rigidbody:
   m_ObjectHideFlags: 0

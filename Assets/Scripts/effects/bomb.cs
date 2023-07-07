@@ -5,7 +5,6 @@ using UnityEngine;
 public class bomb : MonoBehaviour
 {
     ParticleSystem bombEffect;
-    EnemyBase enemy;
 
     void Start()
     {

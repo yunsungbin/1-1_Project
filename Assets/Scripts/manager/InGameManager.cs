@@ -109,7 +109,7 @@ public class InGameManager : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.P))
                 {
-                    Instantiate(star, new Vector3(player.transform.position.x, player.transform.position.y + 10, player.transform.position.z), Quaternion.identity);
+                    Instantiate(star, new Vector3(player.transform.position.x, player.transform.position.y + 5, player.transform.position.z), Quaternion.identity);
                 }
             }
         }

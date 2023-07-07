@@ -19,7 +19,8 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 1
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'Hips' not found\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -83,7 +84,12 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: "\uBB38\uC5B4(Clone)"
+      parentName: 
+      position: {x: -1.1426275, y: 0.044691022, z: 0.7453301}
+      rotation: {x: 0.24202031, y: 0.66439915, z: 0.66439915, w: -0.24202031}
+      scale: {x: 0.71625704, y: 0.71625704, z: 0.396083}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5

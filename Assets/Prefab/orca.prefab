@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2578219824447429371}
   - component: {fileID: 1470555915991127390}
   - component: {fileID: 3714486289371816340}
+  - component: {fileID: 8269890866551220208}
+  - component: {fileID: 917342772515423163}
   m_Layer: 8
   m_Name: orca
   m_TagString: Enemy
@@ -26,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2921848700886007873}
   m_LocalRotation: {x: 0.7071068, y: 0.7071068, z: 0.000000015454312, w: 0.000000015454312}
-  m_LocalPosition: {x: 6.515297, y: 2.06, z: 0.37163195}
-  m_LocalScale: {x: 0.442424, y: 0.2735, z: 0.19013101}
+  m_LocalPosition: {x: -2.36882, y: 2.1786318, z: 6.040347}
+  m_LocalScale: {x: 1.6, y: 1.08, z: 0.76}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,3 +85,33 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &8269890866551220208
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2921848700886007873}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!136 &917342772515423163
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2921848700886007873}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.3511919
+  m_Height: 24.917542
+  m_Direction: 2
+  m_Center: {x: 0.504519, y: -0.15270644, z: 5.421533}

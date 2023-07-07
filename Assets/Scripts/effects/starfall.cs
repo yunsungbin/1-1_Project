@@ -6,10 +6,12 @@ public class starfall : MonoBehaviour
 {
     public ParticleSystem bomb;
     ParticleSystem star;
+    public Transform target;
 
     void Start()
     {
         star = GetComponent<ParticleSystem>();
+        target = InGameManager.Instance.curPlayer.transform;
 
         star.Play();
         StartCoroutine(bombMovement(1f));
@@ -24,7 +26,7 @@ public class starfall : MonoBehaviour
             timer += Time.deltaTime;
             yield return null;
         }
-        Instantiate(bomb, new Vector3(0, 3, 0), Quaternion.identity);
+        Instantiate(bomb, target.position, Quaternion.identity);
         yield return new WaitForSeconds(5);
         Destroy(gameObject);
     }
