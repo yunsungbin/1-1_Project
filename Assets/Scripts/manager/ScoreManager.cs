@@ -7,8 +7,12 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     public GameObject[] stage;
+    public GameObject lose;
     public GameObject[] star1;
     public GameObject[] star2;
+
+    private float timeScore = 0;
+    public Text Scoretime;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +20,14 @@ public class ScoreManager : MonoBehaviour
         {
             stage[i].SetActive(false);
         }
-        
+        lose.SetActive(false);
+        timeScore = InGameManager.times;
     }
 
     // Update is called once per frame
     void Update()
     {
+        SetTime();
         stageTrue();
     }
 
@@ -38,7 +44,11 @@ public class ScoreManager : MonoBehaviour
 
     public void stageTrue()
     {
-        if(InGameManager.stages == 1)
+        if(Player.Lose == true)
+        {
+            lose.SetActive(true);
+        }
+        else if(InGameManager.stages == 1)
         {
             stage[0].SetActive(true);
             star1[0].SetActive(true);
@@ -55,6 +65,19 @@ public class ScoreManager : MonoBehaviour
         {
             stage[1].SetActive(true);
             star2[0].SetActive(true);
+            if (InGameManager.times <= 190)
+            {
+                star2[1].SetActive(true);
+            }
+            if (InGameManager.times <= 130)
+            {
+                star2[2].SetActive(true);
+            }
         }
+    }
+
+    public void SetTime()
+    {
+        Scoretime.text = string.Format("{0:#,0}", timeScore);
     }
 }

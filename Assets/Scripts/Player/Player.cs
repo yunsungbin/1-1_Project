@@ -24,6 +24,8 @@ public class Player : MonoBehaviour
     public static bool deathMonster = false;
     public Animator anim;
 
+    public static bool Lose = false;
+
     private void Awake()
     {
         hp = MaxHp;
@@ -137,7 +139,8 @@ public class Player : MonoBehaviour
 
         if (hp <= 0)
         {
-            Destroy(this.gameObject);
+            Lose = true;
+            SceneManager.LoadScene("Score");
         }
     }
 

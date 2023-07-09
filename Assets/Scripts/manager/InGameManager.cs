@@ -66,6 +66,7 @@ public class InGameManager : MonoBehaviour
     {
         time = 0;
         times = 0;
+        Player.Lose = false;
     }
 
     // Update is called once per frame

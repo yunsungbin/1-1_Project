@@ -19,7 +19,8 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 1
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'LeftUpperLeg' not found\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -27,7 +28,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -83,7 +84,77 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: "\uACE0\uB798 \uC228\uC26C\uAE30(Clone)"
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Box332
+      parentName: "\uACE0\uB798 \uC228\uC26C\uAE30(Clone)"
+      position: {x: -21.923716, y: 1.4873554, z: 208.9367}
+      rotation: {x: 0.70646864, y: 0.70646864, z: 0.030035602, w: -0.030035602}
+      scale: {x: 0.44242397, y: 0.2735, z: 0.190131}
+    - name: IK Chain001
+      parentName: "\uACE0\uB798 \uC228\uC26C\uAE30(Clone)"
+      position: {x: -21.923716, y: 1.4811248, z: 208.5332}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+    - name: IK Chain002
+      parentName: "\uACE0\uB798 \uC228\uC26C\uAE30(Clone)"
+      position: {x: -21.923769, y: 1.6246808, z: 205.60599}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+    - name: IK Chain003
+      parentName: "\uACE0\uB798 \uC228\uC26C\uAE30(Clone)"
+      position: {x: -21.923744, y: 1.5677346, z: 206.879}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+    - name: Bone001
+      parentName: "\uACE0\uB798 \uC228\uC26C\uAE30(Clone)"
+      position: {x: -21.923716, y: 1.5025439, z: 210.35002}
+      rotation: {x: 0.051964667, y: -0.7051904, z: -0.051963605, w: 0.70519924}
+      scale: {x: 1, y: 0.9999999, z: 0.9999999}
+    - name: Bone002
+      parentName: Bone001
+      position: {x: -0.6985248, y: -0.00000019378662, z: 0}
+      rotation: {x: -0.0000008251518, y: -0.0000012516975, z: -0.46726972, w: 0.88411486}
+      scale: {x: 0.9999997, y: 0.9999998, z: 1}
+    - name: Bone003
+      parentName: Bone002
+      position: {x: -0.74012226, y: 0.000017925262, z: 0.000001550293}
+      rotation: {x: -0.0000000037252903, y: -0, z: 0.00000008754432, w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Bone004
+      parentName: Bone003
+      position: {x: -0.101649605, y: -0.0000008720398, z: 0}
+      rotation: {x: 0.00000013783574, y: -0.00000017881393, z: 0.017427517, w: 0.9998481}
+      scale: {x: 1.0000005, y: 1.0000001, z: 1.0000001}
+    - name: Bone005
+      parentName: Bone004
+      position: {x: -1.0061153, y: -0.000026354981, z: 0}
+      rotation: {x: 0.0000000018626451, y: -0.000000059604645, z: 0.006280804, w: 0.9999803}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1}
+    - name: Bone006
+      parentName: Bone005
+      position: {x: -0.81222945, y: -0.0000007751465, z: 0.000001550293}
+      rotation: {x: -0.00013369073, y: 0.6052862, z: 0.00020652243, w: 0.79600793}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000002}
+    - name: Bone007
+      parentName: Bone006
+      position: {x: -0.10298906, y: 0.0000023254395, z: 0}
+      rotation: {x: 0.0010345473, y: 0.09840714, z: -0.0030127726, w: 0.99514115}
+      scale: {x: 0.99999994, y: 0.99999976, z: 1.0000001}
+    - name: Bone008
+      parentName: Bone007
+      position: {x: -0.63739365, y: 0, z: 0}
+      rotation: {x: -6.261657e-14, y: -4.4413893e-11, z: 0.023842856, w: 0.99971575}
+      scale: {x: 1.0000005, y: 1.0000002, z: 1.0000004}
+    - name: Bone009
+      parentName: Bone008
+      position: {x: -0.4175249, y: 0.000007751465, z: 0}
+      rotation: {x: -0.0000000027922447, y: 0.000000028166207, z: -0.000000009313224, w: 1}
+      scale: {x: 1, y: 1.0000005, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -94,13 +165,13 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0

@@ -4415,8 +4415,9 @@ MonoBehaviour:
   Spawner:
   - {fileID: 5375149241916758583, guid: 0654e4669dfc82a4597fbeac7b20ea67, type: 3}
   - {fileID: 8131000087721095000, guid: ce70b29985e230848aa67de8a36e0233, type: 3}
+  - {fileID: 5934571768426778561, guid: 16cf0f84d5c5fdc42911ba0aa9fb4593, type: 3}
   spawnTime: 10
-  sTime: 7
+  sTime: 5
   MaxSpawn: 20
 --- !u!4 &1906814423
 Transform:

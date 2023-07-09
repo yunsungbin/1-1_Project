@@ -35,8 +35,8 @@ public class starfish : EnemyBase
     {
         if (collision.collider.CompareTag("Player"))
         {
-            hpGauge.i--;
-            collision.collider.GetComponent<Player>()?.OnDamage(10);
+            hpGauge.i -= 2;
+            collision.collider.GetComponent<Player>()?.OnDamage(20);
             DieDestroy();
         }
     }
