@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7770927140079832717}
   - component: {fileID: -5102176807915545487}
   - component: {fileID: -3878578252768333450}
+  - component: {fileID: 8817195822323234291}
   m_Layer: 8
   m_Name: starfish(orange)
   m_TagString: Enemy
@@ -114,3 +115,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5530117, y: 1.5713696, z: 2.7947338}
   m_Center: {x: 0.10858248, y: 0.02170886, z: 1.385741}
+--- !u!114 &8817195822323234291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8131000087721095000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84f52670b863b6748b6fa2b823ba18e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Maxhp: 70
+  hp: 0
+  dm: 5
+  speed: 4
+  colTime: 2
+  timer: 4
+  target: {fileID: 0}
+  dg: 0
+  anim: {fileID: 0}

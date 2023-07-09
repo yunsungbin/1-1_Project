@@ -7,8 +7,7 @@ public class starfish : EnemyBase
     public float colTime = 2;
     public float timer;
 
-    public GameObject shot;
-    public Transform spawn;
+    public Transform target;
 
     public float dg = 0;
     public Animator anim;
@@ -16,6 +15,7 @@ public class starfish : EnemyBase
     void Start()
     {
         target = InGameManager.Instance.curPlayer.transform;
+        anim.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -24,7 +24,11 @@ public class starfish : EnemyBase
         dg = Player.dmp;
         Vector3 dir = (new Vector3(target.position.x, target.position.y + 2, target.position.z) - transform.position);
         transform.position += dir.normalized * speed * Time.deltaTime;
-        Attack();
+        if (Time.time > colTime)
+        {
+            StartCoroutine(StarfishAttack());
+            colTime = timer + Time.time;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -33,23 +37,29 @@ public class starfish : EnemyBase
         {
             hpGauge.i--;
             collision.collider.GetComponent<Player>()?.OnDamage(10);
-            //InGameManager.kMoster++;
-            Destroy(gameObject);
+            DieDestroy();
         }
     }
 
-    public void Attack()
+    private void OnTriggerEnter(Collider other)
     {
-        if (Time.time > colTime)
+        if (other.CompareTag("err"))
         {
-            
-            colTime = timer + Time.time;
+            DieDestroy();
         }
+    }
+
+    IEnumerator StarfishAttack()
+    {
+        speed = 5;
+        yield return new WaitForSeconds(1f);
+        speed = 4;
+        StopCoroutine(StarfishAttack());
     }
 
     protected override void DieDestroy()
     {
-        //InGameManager.kMoster++;
+        MonserSpawn.monster++;
         Destroy(gameObject);
     }
 }

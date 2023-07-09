@@ -9,9 +9,11 @@ public class MenuManager : MonoBehaviour
     public GameObject gm;
     public GameObject exit;
     public GameObject create;
+    public GameObject s;
     // Start is called before the first frame update
     void Start()
     {
+        InGameManager.stages = 1;
         InGameManager.StartGame = false;
     }
 
@@ -24,7 +26,13 @@ public class MenuManager : MonoBehaviour
     public void StartGame()
     {
         InGameManager.StartGame = true;
+        InGameManager.stages = 1;
         SceneManager.LoadScene("InGame");
+    }
+
+    public void Setting()
+    {
+        StartCoroutine(NoSet());
     }
 
     public void SetAciveTRUE()
@@ -64,5 +72,15 @@ public class MenuManager : MonoBehaviour
 #else
         Application.Quit(); // 어플리케이션 종료
 #endif
+    }
+
+    IEnumerator NoSet()
+    {
+        s.SetActive(true);
+
+        yield return new WaitForSeconds(1);
+
+        s.SetActive(false);
+        StopCoroutine(NoSet());
     }
 }

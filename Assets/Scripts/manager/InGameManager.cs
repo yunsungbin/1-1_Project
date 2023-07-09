@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class InGameManager : MonoBehaviour
@@ -30,8 +31,12 @@ public class InGameManager : MonoBehaviour
     public ParticleSystem star;
 
     [Header("Timer")]
-    public GameObject timer;
-    public float time;
+    public float time = 0;
+    public static float times = 0;
+    public Text Stime;
+
+    [Header("Stage")]
+    public static float stages;
 
     public static InGameManager Instance
     {
@@ -59,7 +64,8 @@ public class InGameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        time = 0;
+        times = 0;
     }
 
     // Update is called once per frame
@@ -67,6 +73,26 @@ public class InGameManager : MonoBehaviour
     {
         SkillSeting();
         ERRORSKILL();
+        timer();
+        SetTime();
+    }
+
+    public void NextStage()
+    {
+        if(MonserSpawn.monster >= (MonserSpawn.mSpawn * 2))
+        {
+            SceneManager.LoadScene("Score");
+        }
+    }
+
+    void timer()
+    {
+        if (time > 1)
+        {
+            times += 1;
+            time = 0;
+        }
+        time += Time.deltaTime;
     }
 
     public void SkillSeting()
@@ -113,6 +139,11 @@ public class InGameManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void SetTime()
+    {
+        Stime.text = string.Format("{0:#,0}", times);
     }
 
     IEnumerator NoHeal()

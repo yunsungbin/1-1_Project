@@ -12,7 +12,6 @@ public abstract class EnemyBase : MonoBehaviour
     public float dm;
 
     public float speed = 5f;
-    public Transform target;
 
     UnityEngine.AI.NavMeshAgent nav;
 
@@ -25,7 +24,7 @@ public abstract class EnemyBase : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        target = InGameManager.Instance.curPlayer.transform;
+        
     }
 
     // Update is called once per frame
@@ -44,7 +43,7 @@ public abstract class EnemyBase : MonoBehaviour
 
         if (hp <= 0)
         {
-            //InGameManager.kMoster++;
+            MonserSpawn.monster++;
             Destroy(this.gameObject);
         }
     }

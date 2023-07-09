@@ -11,6 +11,8 @@ public class MonserSpawn : MonoBehaviour
     public float MaxSpawn;
     public static float mSpawn;
     private float spawn = 0;
+
+    public static float monster;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,12 +23,38 @@ public class MonserSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(spawn <= MaxSpawn)
+        if(InGameManager.stages == 1)
         {
-            if(Time.time > spawnTime)
+            stage1();
+        }
+        else if(InGameManager.stages == 2)
+        {
+            stage2();
+        }
+    }
+
+    public void stage1()
+    {
+        if (spawn <= MaxSpawn)
+        {
+            if (Time.time > spawnTime)
             {
                 Instantiate(Spawner[Random.Range(0, 1)], new Vector3(Random.Range(Random.Range(-20, -15), Random.Range(15, 21)), 4f, Random.Range(Random.Range(-20, -15), Random.Range(15, 21))), Quaternion.Euler(-90, 0, 0));
                 Instantiate(Spawner[Random.Range(0, 1)], new Vector3(Random.Range(Random.Range(-20, -15), Random.Range(15, 21)), 4f, Random.Range(Random.Range(-20, -15), Random.Range(15, 21))), Quaternion.Euler(-90, 0, 0));
+                spawn++;
+                spawnTime = sTime + Time.time;
+            }
+        }
+    }
+
+    public void stage2()
+    {
+        if (spawn <= MaxSpawn)
+        {
+            if (Time.time > spawnTime)
+            {
+                Instantiate(Spawner[Random.Range(0, 2)], new Vector3(Random.Range(Random.Range(-20, -15), Random.Range(15, 21)), 4f, Random.Range(Random.Range(-20, -15), Random.Range(15, 21))), Quaternion.Euler(-90, 0, 0));
+                Instantiate(Spawner[Random.Range(0, 2)], new Vector3(Random.Range(Random.Range(-20, -15), Random.Range(15, 21)), 4f, Random.Range(Random.Range(-20, -15), Random.Range(15, 21))), Quaternion.Euler(-90, 0, 0));
                 spawn++;
                 spawnTime = sTime + Time.time;
             }

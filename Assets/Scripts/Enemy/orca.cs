@@ -10,6 +10,8 @@ public class orca : EnemyBase
     public GameObject shot;
     public Transform spawn;
 
+    public Transform target;
+
     public float dg = 0;
     public Animator Oct;
     // Start is called before the first frame update
@@ -37,8 +39,6 @@ public class orca : EnemyBase
         {
             hpGauge.i--;
             collision.collider.GetComponent<Player>()?.OnDamage(10);
-            //InGameManager.kMoster++;
-            Destroy(gameObject);
         }
     }
 
@@ -46,13 +46,13 @@ public class orca : EnemyBase
     {
         if (other.CompareTag("err"))
         {
-            Destroy(gameObject);
+            DieDestroy();
         }
     }
 
     protected override void DieDestroy()
     {
-        //InGameManager.kMoster++;
+        MonserSpawn.monster++;
         Destroy(gameObject);
     }
 }

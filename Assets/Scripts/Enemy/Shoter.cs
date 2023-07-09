@@ -10,12 +10,15 @@ public class Shoter : EnemyBase
     public GameObject shot;
     public Transform spawn;
 
+    public Transform target;
+
     public float dg = 0;
     public Animator Oct;
     // Start is called before the first frame update
     void Start()
     {
         target = InGameManager.Instance.curPlayer.transform;
+        Oct.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -37,8 +40,7 @@ public class Shoter : EnemyBase
         {
             hpGauge.i--;
             collision.collider.GetComponent<Player>()?.OnDamage(10);
-            //InGameManager.kMoster++;
-            Destroy(gameObject);
+            DieDestroy();
         }
     }
 
@@ -46,13 +48,13 @@ public class Shoter : EnemyBase
     {
         if (other.CompareTag("err"))
         {
-            Destroy(gameObject);
+            DieDestroy();
         }
     }
 
     protected override void DieDestroy()
     {
-        //InGameManager.kMoster++;
+        MonserSpawn.monster++;
         Destroy(gameObject);
     }
 }
