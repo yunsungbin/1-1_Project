@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bomb : MonoBehaviour
+public class SmallBomb : MonoBehaviour
 {
     ParticleSystem bombEffect;
 
@@ -25,14 +25,5 @@ public class bomb : MonoBehaviour
         }
         yield return new WaitForSeconds(1);
         Destroy(gameObject);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Enemy"))
-        {
-            var enemy = other.GetComponent<EnemyBase>();
-            enemy.OnDamage(10000);
-        }
     }
 }

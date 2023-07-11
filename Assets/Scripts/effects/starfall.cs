@@ -31,11 +31,11 @@ public class starfall : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy"))
         {
-            var enemy = collision.GetComponent<EnemyBase>();
+            var enemy = other.GetComponent<EnemyBase>();
             enemy.OnDamage(100000000);
         }
     }

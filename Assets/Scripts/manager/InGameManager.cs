@@ -38,6 +38,8 @@ public class InGameManager : MonoBehaviour
     [Header("Stage")]
     public static float stages;
 
+    public Text kill;
+
     public static InGameManager Instance
     {
         get
@@ -72,10 +74,12 @@ public class InGameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        NextStage();
         SkillSeting();
         ERRORSKILL();
         timer();
         SetTime();
+        Monster();
     }
 
     public void NextStage()
@@ -145,6 +149,11 @@ public class InGameManager : MonoBehaviour
     public void SetTime()
     {
         Stime.text = string.Format("{0:#,0}", times);
+    }
+
+    public void Monster()
+    {
+        kill.text = string.Format("{0:#,0}", MonserSpawn.monster);
     }
 
     IEnumerator NoHeal()

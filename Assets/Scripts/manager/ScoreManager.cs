@@ -22,6 +22,7 @@ public class ScoreManager : MonoBehaviour
         }
         lose.SetActive(false);
         timeScore = InGameManager.times;
+        MonserSpawn.monster = 0;
     }
 
     // Update is called once per frame

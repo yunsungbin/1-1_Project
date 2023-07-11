@@ -10,6 +10,7 @@ TagManager:
   - block
   - sea
   - err
+  - Attack
   layers:
   - Default
   - TransparentFX

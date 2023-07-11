@@ -18,7 +18,7 @@ public class Shoter : EnemyBase
     void Start()
     {
         target = InGameManager.Instance.curPlayer.transform;
-        Oct.GetComponent<Animator>();
+        //Oct.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -40,14 +40,6 @@ public class Shoter : EnemyBase
         {
             hpGauge.i--;
             collision.collider.GetComponent<Player>()?.OnDamage(10);
-            DieDestroy();
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("err"))
-        {
             DieDestroy();
         }
     }
