@@ -34,8 +34,8 @@ public class ScoreManager : MonoBehaviour
 
     public void Stage2()
     {
-        InGameManager.stages = 2;
         SceneManager.LoadScene("InGame2");
+        InGameManager.stages = 2;
     }
 
     public void Title()

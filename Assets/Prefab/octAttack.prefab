@@ -4844,7 +4844,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 0
-  enemy: {fileID: 0}
+  enemy: {fileID: 8328463043818167442, guid: 0654e4669dfc82a4597fbeac7b20ea67, type: 3}
   speed: 3
 --- !u!136 &307599160736265593
 CapsuleCollider:

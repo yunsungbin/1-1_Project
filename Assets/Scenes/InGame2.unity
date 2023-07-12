@@ -2595,10 +2595,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4be33cb2b3b7e7e4fa237fcf5fea859b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curPlayer: {fileID: 0}
+  curPlayer: {fileID: 834368508}
   healer: {fileID: 1896930076030486864, guid: c0991c1d6cf11c545895a623f8fa499d, type: 3}
   skillAttack: {fileID: 712124332925114083, guid: efdb1538dab9e7d4298c496facffd96d, type: 3}
-  player: {fileID: 0}
+  player: {fileID: 834368509}
   healMaxDelay: 10
   bombMaxDelay: 15
   t: {fileID: 650111191}
@@ -2727,9 +2727,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Spawner:
-  - {fileID: 5375149241916758583, guid: 0654e4669dfc82a4597fbeac7b20ea67, type: 3}
-  - {fileID: 8131000087721095000, guid: ce70b29985e230848aa67de8a36e0233, type: 3}
-  - {fileID: 5934571768426778561, guid: 16cf0f84d5c5fdc42911ba0aa9fb4593, type: 3}
+  - {fileID: 9175465020694859799, guid: 0654e4669dfc82a4597fbeac7b20ea67, type: 3}
+  - {fileID: 4959136120817449849, guid: ce70b29985e230848aa67de8a36e0233, type: 3}
+  - {fileID: 8140564973575451480, guid: 16cf0f84d5c5fdc42911ba0aa9fb4593, type: 3}
   spawnTime: 10
   sTime: 7
   MaxSpawn: 20

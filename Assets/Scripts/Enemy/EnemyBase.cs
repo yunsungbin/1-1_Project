@@ -13,8 +13,6 @@ public abstract class EnemyBase : MonoBehaviour
 
     public float speed = 5f;
 
-    UnityEngine.AI.NavMeshAgent nav;
-
     private void Awake()
     {
         hp = Maxhp;
