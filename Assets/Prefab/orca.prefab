@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3714486289371816340}
   - component: {fileID: 8269890866551220208}
   - component: {fileID: 917342772515423163}
+  - component: {fileID: 5497245192926522641}
   m_Layer: 8
   m_Name: orca
   m_TagString: Enemy
@@ -115,3 +116,31 @@ CapsuleCollider:
   m_Height: 24.917542
   m_Direction: 2
   m_Center: {x: 0.504519, y: -0.15270644, z: 5.421533}
+--- !u!114 &5497245192926522641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2921848700886007873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4ef399b3ec08bb45a6250362ac82879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Maxhp: 1000
+  hp: 0
+  dm: 10
+  speed: 3
+  shot: {fileID: 0}
+  spawn: {fileID: 0}
+  target: {fileID: 0}
+  range: 15
+  playerTag: Player
+  partToRotate: {fileID: 0}
+  turnSpeed: 10
+  dg: 0
+  colTime: 3
+  timer: 0
+  colTime2: 3
+  timer2: 0

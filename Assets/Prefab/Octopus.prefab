@@ -60,6 +60,7 @@ GameObject:
   - component: {fileID: 8328463043818167441}
   - component: {fileID: 8328463043818167442}
   - component: {fileID: 8328463043818167444}
+  - component: {fileID: 7826266012443559944}
   m_Layer: 8
   m_Name: Octopus
   m_TagString: Enemy
@@ -173,7 +174,7 @@ MonoBehaviour:
   partToRotate: {fileID: 3876914365543494353}
   turnSpeed: 10
   dg: 0
-  Oct: {fileID: 0}
+  Oct: {fileID: 7826266012443559944}
 --- !u!54 &8328463043818167444
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -190,3 +191,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!95 &7826266012443559944
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9175465020694859799}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: a6d145dd391c89548b907d98cc1c9611, type: 3}
+  m_Controller: {fileID: 9100000, guid: 591d3835d695afc48b4fbcaa07f3984b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
