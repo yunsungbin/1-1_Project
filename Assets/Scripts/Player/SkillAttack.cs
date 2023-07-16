@@ -112,7 +112,7 @@ public class SkillAttack : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.transform.tag == "Enemy")
+        if (col.CompareTag("Enemy"))
         {
             Instantiate(bomb, transform.position, Quaternion.identity);
             col.GetComponent<EnemyBase>()?.OnDamage(damage);

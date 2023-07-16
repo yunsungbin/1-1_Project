@@ -2727,9 +2727,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Spawner:
-  - {fileID: 9175465020694859799, guid: 0654e4669dfc82a4597fbeac7b20ea67, type: 3}
-  - {fileID: 4959136120817449849, guid: ce70b29985e230848aa67de8a36e0233, type: 3}
-  - {fileID: 8140564973575451480, guid: 16cf0f84d5c5fdc42911ba0aa9fb4593, type: 3}
+  - {fileID: 1997804148414715821, guid: ca9d132a4168a4a4397078639677f4b3, type: 3}
+  - {fileID: 8009864968879875660, guid: ce70b29985e230848aa67de8a36e0233, type: 3}
+  - {fileID: 761813990702896757, guid: 16cf0f84d5c5fdc42911ba0aa9fb4593, type: 3}
   spawnTime: 10
   sTime: 7
   MaxSpawn: 20

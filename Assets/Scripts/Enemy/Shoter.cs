@@ -21,13 +21,13 @@ public class Shoter : EnemyBase
     private float detectionDistance = 20f;
 
     public float dg = 0;
-    public Animator Oct;
+    //public Animator Oct;
     // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
         target = InGameManager.Instance.curPlayer.transform;
-        Oct.GetComponent<Animator>();
+        //Vector3
     }
 
     // Update is called once per frame
@@ -85,7 +85,6 @@ public class Shoter : EnemyBase
 
     void Move()
     {
-        Oct.SetBool("Move", true);
         transform.position += transform.forward * speed * Time.deltaTime;
     }
 

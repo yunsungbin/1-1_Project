@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class starfish : EnemyBase
 {
+    public float colTime = 3;
+    public float timer;
+
     public Transform target;
     public float range = 15f;
     public string playerTag = "Player";
@@ -15,6 +18,7 @@ public class starfish : EnemyBase
     private float detectionDistance = 20f;
 
     public float dg = 0;
+    private bool attackorder = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +33,25 @@ public class starfish : EnemyBase
         PathFinding();
         Turn();
         Move();
+        Attack();
     }
+
+    void Attack()
+    {
+        if (Time.time > colTime && attackorder == false)
+        {
+            speed = 5;
+            attackorder = true;
+            colTime = timer + Time.time;
+        }
+        else if(Time.time > colTime && attackorder == true)
+        {
+            speed = 4;
+            attackorder = true;
+            colTime = timer + Time.time;
+        }
+    }
+
     void UpdateTarget()
     {
 

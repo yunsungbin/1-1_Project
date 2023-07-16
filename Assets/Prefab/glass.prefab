@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8484644065498047615}
   - component: {fileID: 6810156669273892763}
   - component: {fileID: 7390180987936888763}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Box040
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 5201267149918371454}
   - component: {fileID: 4877966536454628943}
   - component: {fileID: 4700846184870916570}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Box039
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 8389699303715663035}
   - component: {fileID: 8126064184543102426}
   - component: {fileID: 4003606139577136402}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Box038
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 2810860146883447279}
   - component: {fileID: 7426773051259206404}
   - component: {fileID: 8458338326463907807}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Box037
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 5424979485054625156}
   - component: {fileID: 8297194151346441543}
   - component: {fileID: 5760081505712486456}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Box036
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 4053012475967234136}
   - component: {fileID: 485008111249879869}
   - component: {fileID: 2194820547556588434}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Box035
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -510,9 +510,9 @@ GameObject:
   - component: {fileID: -8364293500831694277}
   - component: {fileID: 4347096130726176691}
   - component: {fileID: 355916425206398695}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: glass
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -559,7 +559,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7279545265489238876}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 1.2320876
   m_Height: 3.212429
@@ -579,7 +579,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 62
   m_CollisionDetection: 0
 --- !u!1 &7683006824200258414
 GameObject:
@@ -592,7 +592,7 @@ GameObject:
   - component: {fileID: 6523644986668898605}
   - component: {fileID: 3578773274801380735}
   - component: {fileID: 9165201619730663312}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Box034
   m_TagString: Untagged
   m_Icon: {fileID: 0}

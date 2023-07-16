@@ -14,7 +14,7 @@ public class Des : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ds > 1)
+        if (ds > 3)
         {
             Destroy(gameObject);
             ds = 0;

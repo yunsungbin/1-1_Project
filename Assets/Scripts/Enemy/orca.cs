@@ -13,7 +13,7 @@ public class orca : EnemyBase
     public Transform partToRotate;
     public float turnSpeed = 10f;
 
-    private float rotationalDamp = 5f;
+    private float rotationalDamp = 0.1f;
     private float rayCastOffset = 2.5f;
     private float detectionDistance = 20f;
 
@@ -31,7 +31,7 @@ public class orca : EnemyBase
     void Update()
     {
         Range();
-        PathFinding();
+        //PathFinding();
         Turn();
         Move();
         BossPhase();
@@ -66,15 +66,17 @@ public class orca : EnemyBase
 
     void Turn()
     {
-        Vector3 pos = target.position - transform.position;
-        var rotation = Quaternion.LookRotation(pos);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationalDamp * Time.deltaTime);
+        Vector3 pos = new Vector3(target.position.x, target.position.y, target.position.z + 90) - new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        pos.Normalize();
+        var rotation = Quaternion.LookRotation(-pos);
+        transform.rotation = rotation;
+        //transform.rotation = Quaternion.Euler(trans.x, trans.y, trans.z + 90);
     }
 
     void Move()
     {
         //Oct.SetBool("Move", true);
-        transform.position += transform.forward * speed * Time.deltaTime;
+        transform.position += -transform.forward * speed * Time.deltaTime;
     }
 
     void Range()
@@ -82,10 +84,10 @@ public class orca : EnemyBase
         if (target == null)
             return;
 
-        Vector3 dir = target.position - transform.position;
+        Vector3 dir = new Vector3(target.position.x, target.position.y, target.position.z) - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
-        Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-        partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+        Vector3 rotation = Quaternion.Slerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
+        partToRotate.rotation = Quaternion.Euler(rotation.x, rotation.y, rotation.z);
     }
 
     void PathFinding()
@@ -111,7 +113,7 @@ public class orca : EnemyBase
             rayCastVectorOffset += transform.up;
 
         if (rayCastVectorOffset != Vector3.zero)
-            transform.Rotate(rayCastVectorOffset * 5f * Time.deltaTime);
+            transform.Rotate(rayCastVectorOffset * 0.1f * Time.deltaTime);
         else
             Turn();
     }
@@ -126,20 +128,35 @@ public class orca : EnemyBase
 
     public void PhaseOne()
     {
-        Vector3 dir = target.position - transform.position;
+        Vector3 pos = new Vector3(target.position.x, target.position.y, target.position.z) - transform.position;
+        pos.Normalize();
+        var dir = Quaternion.LookRotation(-pos);
         if (Time.time > colTime)
         {
-            Instantiate(shot, new Vector3(transform.position.x - 1, transform.position.y, transform.position.z), Quaternion.Euler(dir.x, dir.y, dir.z));
+            Instantiate(shot, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.Lerp(partToRotate.rotation, dir, Time.deltaTime * 0.1f));
             colTime = timer + Time.time;
         }
     }
 
     public float colTime2 = 2;
     public float timer2;
+    //public GameObject skillWater;
 
     public void PhaseTwo()
     {
-
+        speed = 4;
+        Vector3 pos = new Vector3(target.position.x, target.position.y, target.position.z) - transform.position;
+        pos.Normalize();
+        var dir = Quaternion.LookRotation(-pos);
+        if (Time.time > colTime)
+        {
+            for(int i = 0; i < 5; i++)
+            {
+                //Instantiate(skillWater, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.Lerp(partToRotate.rotation, dir, Time.deltaTime * 0.1f));
+                colTime = timer + Time.time;
+            }
+            
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
