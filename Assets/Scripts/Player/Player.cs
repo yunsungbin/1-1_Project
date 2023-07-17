@@ -25,7 +25,10 @@ public class Player : MonoBehaviour
     public Animator anim;
 
     public static bool Lose = false;
+    public AudioClip audioWalk;
+    AudioSource audioSource;
 
+    private bool isWalk;
     private void Awake()
     {
         hp = MaxHp;
@@ -37,12 +40,15 @@ public class Player : MonoBehaviour
         dmPlayer = dmp;
         hpGauge.i = 10;
         anim.GetComponent<Animator>();
+        audioSource = gameObject.GetComponent<AudioSource>();
+        //audioSource.clip = audioWalk;
     }
 
     void Update()
     {
         BulletShot();
         GMSkill();
+        WalkAudio();
     }
 
     private void FixedUpdate()
@@ -56,7 +62,8 @@ public class Player : MonoBehaviour
         if (!(h == 0 && v == 0))
         {
             transform.position += dir * Speed * Time.deltaTime;
-
+            isWalk = true;
+            
             if(v >= 0)
             {
                 anim.SetBool("Run", true);
@@ -70,6 +77,7 @@ public class Player : MonoBehaviour
         }
         if(h==0 && v == 0)
         {
+            isWalk = false;
             anim.SetBool("Back", false);
             anim.SetBool("Run", false);
         }
@@ -98,6 +106,44 @@ public class Player : MonoBehaviour
             Instantiate(shot, playerposition, Quaternion.Euler(0, 90, 0));
             nextFire = Time.time + fire;
         }
+    }
+
+    private bool walk = false;
+
+    void WalkAudio()
+    {
+        if(isWalk == true)
+        {
+            StartCoroutine(Walk());
+        }
+        if(isWalk == false)
+        {
+            audioSource.Pause();
+        }
+    }
+
+    IEnumerator Walk()
+    {
+        if(walk == false)
+        {
+            walk = true;
+            audioSource.PlayOneShot(audioWalk, 1);
+
+            if (isWalk == false)
+            {
+                audioSource.Pause();
+            }
+            yield return new WaitForSeconds(4f);
+            walk = false;
+            if (isWalk == false)
+            {
+                audioSource.Pause();
+                StopCoroutine(Walk());
+            }
+
+            StartCoroutine(Walk());
+        }
+        
     }
 
     void GMSkill()

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
@@ -10,17 +11,34 @@ public class MenuManager : MonoBehaviour
     public GameObject exit;
     public GameObject create;
     public GameObject s;
+    public GameObject set;
+    public AudioMixer mixer;
+    public Slider slider;
     // Start is called before the first frame update
     void Start()
     {
         InGameManager.stages = 1;
         InGameManager.StartGame = false;
+        slider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void SetVolume(float sliderValue)
+    {
+        float sound = slider.value;
+
+        if (sound == -40f) mixer.SetFloat("BGM", -80);
+        else mixer.SetFloat("BGM", sound);
+    }
+
+    public void audioes()
+    {
+        AudioListener.volume = AudioListener.volume == 0 ? 1 : 0;
     }
 
     public void StartGame()
@@ -32,7 +50,13 @@ public class MenuManager : MonoBehaviour
 
     public void Setting()
     {
-        StartCoroutine(NoSet());
+        set.SetActive(true);
+        //StartCoroutine(NoSet());
+    }
+
+    public void SetFalse()
+    {
+        set.SetActive(false);
     }
 
     public void SetAciveTRUE()
