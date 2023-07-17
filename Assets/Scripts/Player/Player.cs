@@ -104,16 +104,16 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.F1))
         {
-            SceneManager.LoadScene("Score");
+            LoadingSceneManager.LoadScene("Score");
         }
         if (Input.GetKey(KeyCode.F2))
         {
             InGameManager.stages = 2;
-            SceneManager.LoadScene("InGame2");
+            LoadingSceneManager.LoadScene("InGame2");
         }
         if (Input.GetKey(KeyCode.F3))
         {
-            SceneManager.LoadScene("Title");
+            LoadingSceneManager.LoadScene("Title");
         }
     }
 

@@ -13,6 +13,9 @@ public abstract class EnemyBase : MonoBehaviour
 
     public float speed = 5f;
 
+    private bool isDamage = false;
+    public MeshRenderer[] meshs = new MeshRenderer[1];
+
     private void Awake()
     {
         hp = Maxhp;
@@ -38,11 +41,29 @@ public abstract class EnemyBase : MonoBehaviour
     public virtual void OnDamage(float dmg)
     {
         hp -= dmg;
+        StartCoroutine(OnDamage());
 
         if (hp <= 0)
         {
             MonserSpawn.monster++;
             Destroy(this.gameObject);
+        }
+    }
+
+    IEnumerator OnDamage()
+    {
+
+        isDamage = true;
+        foreach (MeshRenderer mesh in meshs)
+        {
+            mesh.material.color = Color.red;
+        }
+        yield return new WaitForSeconds(0.5f);
+
+        isDamage = false;
+        foreach (MeshRenderer mesh in meshs)
+        {
+            mesh.material.color = Color.white;
         }
     }
 

@@ -27,7 +27,7 @@ public class MenuManager : MonoBehaviour
     {
         InGameManager.StartGame = true;
         InGameManager.stages = 1;
-        SceneManager.LoadScene("InGame");
+        LoadingSceneManager.LoadScene("InGame");
     }
 
     public void Setting()

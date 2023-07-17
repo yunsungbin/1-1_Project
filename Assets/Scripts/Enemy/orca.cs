@@ -31,7 +31,7 @@ public class orca : EnemyBase
     void Update()
     {
         Range();
-        //PathFinding();
+        PathFinding();
         Turn();
         Move();
         BossPhase();
@@ -66,8 +66,7 @@ public class orca : EnemyBase
 
     void Turn()
     {
-        Vector3 pos = new Vector3(target.position.x, target.position.y, target.position.z + 90) - new Vector3(transform.position.x, transform.position.y, transform.position.z);
-        pos.Normalize();
+        Vector3 pos = target.position - transform.position;
         var rotation = Quaternion.LookRotation(-pos);
         transform.rotation = rotation;
         //transform.rotation = Quaternion.Euler(trans.x, trans.y, trans.z + 90);

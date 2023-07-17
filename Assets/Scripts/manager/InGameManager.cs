@@ -86,7 +86,7 @@ public class InGameManager : MonoBehaviour
     {
         if(MonserSpawn.monster >= (MonserSpawn.mSpawn * 2))
         {
-            SceneManager.LoadScene("Score");
+            LoadingSceneManager.LoadScene("Score");
         }
     }
 

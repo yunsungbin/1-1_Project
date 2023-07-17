@@ -178,6 +178,8 @@ MonoBehaviour:
   hp: 0
   dm: 5
   speed: 4
+  meshs:
+  - {fileID: 8370007735709829017}
   colTime: 3
   timer: 0
   target: {fileID: 0}

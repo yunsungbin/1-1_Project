@@ -34,19 +34,19 @@ public class ScoreManager : MonoBehaviour
 
     public void Stage2()
     {
-        SceneManager.LoadScene("InGame2");
         InGameManager.stages = 2;
+        LoadingSceneManager.LoadScene("InGame2");
     }
 
     public void Stage1()
     {
-        SceneManager.LoadScene("InGame");
         InGameManager.stages = 1;
+        LoadingSceneManager.LoadScene("InGame");
     }
 
     public void Title()
     {
-        SceneManager.LoadScene("Title");
+        LoadingSceneManager.LoadScene("Title");
     }
 
     public void stageTrue()

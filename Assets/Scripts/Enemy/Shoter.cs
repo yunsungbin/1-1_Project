@@ -21,6 +21,7 @@ public class Shoter : EnemyBase
     private float detectionDistance = 20f;
 
     public float dg = 0;
+
     //public Animator Oct;
     // Start is called before the first frame update
     void Start()

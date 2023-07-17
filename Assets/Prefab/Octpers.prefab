@@ -164,6 +164,8 @@ MonoBehaviour:
   partToRotate: {fileID: 4681810312900408060}
   turnSpeed: 10
   dg: 0
+  meshs:
+  - {fileID: 1993838144971130653}
 --- !u!1 &4681810312900408035
 GameObject:
   m_ObjectHideFlags: 0
