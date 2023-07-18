@@ -789,6 +789,7 @@ MonoBehaviour:
   fire: 0.5
   dmPlayer: 10
   anim: {fileID: 122288151}
+  audioWalk: {fileID: 0}
 --- !u!23 &122288147
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11292,6 +11293,7 @@ GameObject:
   - component: {fileID: 5875147591064493441}
   - component: {fileID: 5875147591064493444}
   - component: {fileID: 5875147591064493445}
+  - component: {fileID: 5875147591064493446}
   m_Layer: 8
   m_Name: orca
   m_TagString: Untagged
@@ -11395,6 +11397,8 @@ MonoBehaviour:
   hp: 0
   dm: 5
   speed: 3
+  meshs:
+  - {fileID: 0}
   shot: {fileID: 3019738464016926570, guid: ee03c08fcf6223942bbd6b8f0abf295b, type: 3}
   spawn: {fileID: 0}
   target: {fileID: 0}
@@ -11407,6 +11411,26 @@ MonoBehaviour:
   timer: 4
   colTime2: 2
   timer2: 0
+--- !u!95 &5875147591064493446
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5875147591064493439}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 81a8b64f22ef70a47a1e1cc2f4a509e9, type: 3}
+  m_Controller: {fileID: 9100000, guid: e2882c839c985744c8ec10419f00809c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6866880680656062661
 GameObject:
   m_ObjectHideFlags: 0
