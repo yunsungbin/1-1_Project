@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    public GameObject mode;
     public GameObject gm;
     public GameObject exit;
     public GameObject create;
@@ -14,6 +15,8 @@ public class MenuManager : MonoBehaviour
     public GameObject set;
     public AudioMixer mixer;
     public Slider slider;
+
+    public static bool hard = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,8 +47,27 @@ public class MenuManager : MonoBehaviour
     public void StartGame()
     {
         InGameManager.StartGame = true;
+        hard = false;
         InGameManager.stages = 1;
         LoadingSceneManager.LoadScene("InGame");
+    }
+
+    public void HardGame()
+    {
+        InGameManager.StartGame = true;
+        hard = true;
+        InGameManager.stages = 1;
+        LoadingSceneManager.LoadScene("InGame");
+    }
+
+    public void Mode()
+    {
+        mode.SetActive(true);
+    }
+
+    public void NotMode()
+    {
+        mode.SetActive(false);
     }
 
     public void Setting()

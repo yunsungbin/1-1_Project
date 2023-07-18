@@ -69,6 +69,16 @@ public class InGameManager : MonoBehaviour
         time = 0;
         times = 0;
         Player.Lose = false;
+        if(MenuManager.hard == false)
+        {
+            healMaxDelay = 10f;
+            bombMaxDelay = 15f;
+        }
+        if(MenuManager.hard == true)
+        {
+            healMaxDelay = 15f;
+            bombMaxDelay = 20f;
+        }
     }
 
     // Update is called once per frame

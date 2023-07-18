@@ -132,8 +132,17 @@ public class Shoter : EnemyBase
     {
         if (collision.collider.CompareTag("Player"))
         {
-            hpGauge.i--;
-            collision.collider.GetComponent<Player>()?.OnDamage(10);
+            if (MenuManager.hard == false)
+            {
+                hpGauge.i -= 1;
+                collision.collider.GetComponent<Player>()?.OnDamage(10);
+            }
+            if (MenuManager.hard == true)
+            {
+                hpGauge.i -= 2;
+                collision.collider.GetComponent<Player>()?.OnDamage(20);
+            }
+            
             DieDestroy();
         }
     }

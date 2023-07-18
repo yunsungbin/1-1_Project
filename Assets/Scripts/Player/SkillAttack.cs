@@ -22,6 +22,10 @@ public class SkillAttack : MonoBehaviour
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
         Destroy(gameObject, 10f);
+        if(MenuManager.hard == false)
+        {
+            damage = 50;
+        }
     }
 
     void Update()

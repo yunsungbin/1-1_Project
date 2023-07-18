@@ -138,7 +138,7 @@ MonoBehaviour:
   partToRotate: {fileID: 3850261269669697663}
   turnSpeed: 10
   speed: 10
-  damage: 50
+  damage: 30
   bomb: {fileID: 7503774178136223582, guid: 9b597436c8ca15d49bbd01397ab1654f, type: 3}
 --- !u!54 &1883237101264036213
 Rigidbody:

@@ -174,10 +174,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f52670b863b6748b6fa2b823ba18e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Maxhp: 70
+  Maxhp: 80
   hp: 0
-  dm: 5
-  speed: 4
+  dm: 6
+  speed: 6
   meshs:
   - {fileID: 8370007735709829017}
   colTime: 3

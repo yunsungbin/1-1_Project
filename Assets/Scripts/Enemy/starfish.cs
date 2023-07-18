@@ -24,6 +24,11 @@ public class starfish : EnemyBase
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
         target = InGameManager.Instance.curPlayer.transform;
+        if(MenuManager.hard == false)
+        {
+            hp = 70;
+            speed = 4;
+        }
     }
 
     // Update is called once per frame
@@ -135,8 +140,17 @@ public class starfish : EnemyBase
     {
         if (collision.collider.CompareTag("Player"))
         {
-            hpGauge.i--;
-            collision.collider.GetComponent<Player>()?.OnDamage(10);
+            if (MenuManager.hard == false)
+            {
+                hpGauge.i -= 2;
+                collision.collider.GetComponent<Player>()?.OnDamage(20);
+            }
+            if (MenuManager.hard == true)
+            {
+                hpGauge.i -= 3;
+                collision.collider.GetComponent<Player>()?.OnDamage(30);
+            }
+            
             DieDestroy();
         }
     }

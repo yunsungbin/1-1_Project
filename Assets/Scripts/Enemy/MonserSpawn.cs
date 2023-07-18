@@ -23,14 +23,29 @@ public class MonserSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(InGameManager.stages == 1)
+        if(MenuManager.hard == false)
         {
-            stage1();
+            if (InGameManager.stages == 1)
+            {
+                stage1();
+            }
+            else if (InGameManager.stages == 2)
+            {
+                Normalstage2();
+            }
         }
-        else if(InGameManager.stages == 2)
+        else if(MenuManager.hard == true)
         {
-            stage2();
+            if (InGameManager.stages == 1)
+            {
+                stage1();
+            }
+            else if (InGameManager.stages == 2)
+            {
+                stage2();
+            }
         }
+        
     }
 
     public void stage1()
@@ -47,12 +62,28 @@ public class MonserSpawn : MonoBehaviour
         }
     }
 
+    public void Normalstage2()
+    {
+        mSpawn = 20;
+        if (spawn <= MaxSpawn)
+        {
+            if (Time.time > spawnTime)
+            {
+                Instantiate(Spawner[Random.Range(0, 3)], new Vector3(Random.Range(Random.Range(-20, -15), Random.Range(15, 21)), 4f, Random.Range(Random.Range(-20, -15), Random.Range(15, 21))), Quaternion.Euler(-90, 0, 0));
+                Instantiate(Spawner[Random.Range(0, 3)], new Vector3(Random.Range(Random.Range(-20, -15), Random.Range(15, 21)), 4f, Random.Range(Random.Range(-20, -15), Random.Range(15, 21))), Quaternion.Euler(-90, 0, 0));
+                spawn++;
+                spawnTime = sTime + Time.time;
+            }
+        }
+    }
+
     public void stage2()
     {
         if (spawn <= MaxSpawn)
         {
             if (Time.time > spawnTime)
             {
+                Instantiate(Spawner[Random.Range(0, 3)], new Vector3(Random.Range(Random.Range(-20, -15), Random.Range(15, 21)), 4f, Random.Range(Random.Range(-20, -15), Random.Range(15, 21))), Quaternion.Euler(-90, 0, 0));
                 Instantiate(Spawner[Random.Range(0, 3)], new Vector3(Random.Range(Random.Range(-20, -15), Random.Range(15, 21)), 4f, Random.Range(Random.Range(-20, -15), Random.Range(15, 21))), Quaternion.Euler(-90, 0, 0));
                 Instantiate(Spawner[Random.Range(0, 3)], new Vector3(Random.Range(Random.Range(-20, -15), Random.Range(15, 21)), 4f, Random.Range(Random.Range(-20, -15), Random.Range(15, 21))), Quaternion.Euler(-90, 0, 0));
                 spawn++;

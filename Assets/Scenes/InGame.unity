@@ -347,8 +347,8 @@ MonoBehaviour:
   healer: {fileID: 1896930076030486864, guid: c0991c1d6cf11c545895a623f8fa499d, type: 3}
   skillAttack: {fileID: 712124332925114083, guid: efdb1538dab9e7d4298c496facffd96d, type: 3}
   player: {fileID: 7695318104081425022}
-  healMaxDelay: 10
-  bombMaxDelay: 15
+  healMaxDelay: 15
+  bombMaxDelay: 20
   t: {fileID: 1029618966}
   star: {fileID: 552332322698066628, guid: 4a545dedf1b62d546a634f1c061c9f50, type: 3}
   time: 0
@@ -4776,7 +4776,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7025777767687370951}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.73, z: -1.74}
+  m_LocalPosition: {x: 0, y: 1.48, z: -1.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
