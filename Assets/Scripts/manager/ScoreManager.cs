@@ -44,6 +44,11 @@ public class ScoreManager : MonoBehaviour
         LoadingSceneManager.LoadScene("InGame");
     }
 
+    public void Ending()
+    {
+        LoadingSceneManager.LoadScene("Ending");
+    }
+
     public void Title()
     {
         LoadingSceneManager.LoadScene("Title");

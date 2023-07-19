@@ -6,14 +6,28 @@ using UnityEngine.SceneManagement;
 
 public class IntroManager : MonoBehaviour
 {
-    [SerializeField] Image image = null;
-    [SerializeField] Text text = null;
+    public GameObject[] Intro;
 
     public GameObject Skip;
 
+    [Header("Text UI")] public Text textUI;
+    public GameObject textui;
+    [Header("Text UI2")] public Text textUI2;
+    public GameObject textui2;
+    [Header("타이핑 지연 시간")] public float delayTime;
+    IEnumerator startTyping;
+    public string[] write;
+    bool typingCheck = false;
+    WaitForSeconds time;
+
+    public int textNum = 0;
+
     void Start()
     {
-        StartCoroutine(FadeTextToFullAlpha(1.5f, image, text));
+        textui.SetActive(true);
+        textui2.SetActive(true);
+        time = new WaitForSeconds(delayTime);
+        StartCoroutine(IntroStart());
     }
 
     void Update()
@@ -21,28 +35,138 @@ public class IntroManager : MonoBehaviour
         
     }
 
-    public IEnumerator FadeTextToFullAlpha(float t, Image i, Text j)
+    IEnumerator IntroStart()
     {
-        j.color = new Color(j.color.r, j.color.g, j.color.b, 0);
-
-        while (j.color.a < 2.0f)
+        for(int i = 0; i < 3; i++)
         {
-            j.color = new Color(j.color.r, j.color.g, j.color.b, j.color.a + (Time.deltaTime / t));
-            yield return null;
+            NextStory();
+            for (int j = 0; j < 3; j++)
+            {
+                Intro[0].SetActive(true);
+                yield return new WaitForSeconds(0.5f);
+                Intro[1].SetActive(true);
+                Intro[0].SetActive(false);
+                yield return new WaitForSeconds(0.5f);
+                Intro[1].SetActive(false);
+            }
+            textNum++;
         }
-        j.color = new Color(j.color.r, j.color.g, j.color.b, 1);
-        while (j.color.a > 0.0f)
+        textui.SetActive(false);
+        Intro[0].SetActive(false);
+        for (int i = 0; i < 2; i++)
         {
-            j.color = new Color(j.color.r, j.color.g, j.color.b, j.color.a - (Time.deltaTime / t));
-            yield return null;
+            NextStory2();
+            for (int j = 0; j < 5; j++)
+            {
+                Intro[2].SetActive(true);
+                yield return new WaitForSeconds(0.3f);
+                Intro[3].SetActive(true);
+                Intro[2].SetActive(false);
+                yield return new WaitForSeconds(0.3f);
+                Intro[3].SetActive(false);
+            }
+            textNum++;
+        }
+        textui.SetActive(true);
+        textui2.SetActive(false);
+        Intro[2].SetActive(false);
+        for (int i = 0; i < 3; i++)
+        {
+            NextStory();
+            for (int j = 0; j < 5; j++)
+            {
+                Intro[4].SetActive(true);
+                yield return new WaitForSeconds(0.3f);
+                Intro[5].SetActive(true);
+                Intro[4].SetActive(false);
+                yield return new WaitForSeconds(0.3f);
+                Intro[6].SetActive(true);
+                Intro[5].SetActive(false);
+                yield return new WaitForSeconds(0.3f);
+                Intro[6].SetActive(false);
+            }
+            textNum++;
+        }
+        textui.SetActive(false);
+        textui2.SetActive(false);
+        LoadingSceneManager.LoadScene("Title");
+    }
+
+    void NextStory()
+    {
+        
+        if (!typingCheck)
+        {
+            startTyping = TypingPage();
+            typingCheck = true;
+            StartCoroutine(startTyping);
+        }
+        else
+        {
+            // 타이핑 효과 넘기기
+            if (typingCheck)
+            {
+                StopCoroutine(startTyping);
+                textUI.text = write[textNum];
+                typingCheck = false;
+            }
+        }
+    }
+
+    void NextStory2()
+    {
+
+        if (!typingCheck)
+        {
+            startTyping = TypingPage2();
+            typingCheck = true;
+            StartCoroutine(startTyping);
+        }
+        else
+        {
+            // 타이핑 효과 넘기기
+            if (typingCheck)
+            {
+                StopCoroutine(startTyping);
+                textUI2.text = write[textNum];
+                typingCheck = false;
+            }
+        }
+    }
+
+    IEnumerator TypingPage2()
+    {
+        string pageText;
+
+        for (int i = 0; i < write[textNum].Length + 1; i++)
+        {
+            pageText = write[textNum].Substring(0, i);
+            pageText += "<color=#00000000>" + write[textNum].Substring(i) + "</color>";
+            textUI2.text = pageText;
+            yield return time;
         }
 
-        SceneManager.LoadScene("Title");
+        typingCheck = false;
+    }
+
+    IEnumerator TypingPage()
+    {
+        string pageText;
+
+        for (int i = 0; i < write[textNum].Length + 1; i++)
+        {
+            pageText = write[textNum].Substring(0, i);
+            pageText += "<color=#00000000>" + write[textNum].Substring(i) + "</color>";
+            textUI.text = pageText;
+            yield return time;
+        }
+
+        typingCheck = false;
     }
 
     public void SKIP()
     {
-        SceneManager.LoadScene("Title");
+        LoadingSceneManager.LoadScene("Title");
     }
 
 }

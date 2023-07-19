@@ -1151,7 +1151,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0C0\uC774\uD2C0\uB85C"
+  m_Text: "\uC5D4\uB529\uBCF4\uAE30"
 --- !u!222 &1149669148
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1490,7 +1490,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 357664388}
         m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
-        m_MethodName: Title
+        m_MethodName: Ending
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
